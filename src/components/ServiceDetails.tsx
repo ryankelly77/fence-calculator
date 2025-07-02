@@ -17,9 +17,6 @@ const ServiceDetails = () => {
           <p className="text-sm text-green-700">
             2 coats of premium UV-resistant stain for maximum protection and longevity.
           </p>
-          <Badge variant="secondary" className="mt-2">
-            $9-10/linear ft
-          </Badge>
         </CardContent>
       </Card>
 
@@ -34,9 +31,6 @@ const ServiceDetails = () => {
           <p className="text-sm text-blue-700">
             Professional cleaning to remove mold, mildew, and stains for optimal adhesion.
           </p>
-          <Badge variant="secondary" className="mt-2">
-            $3-4/linear ft
-          </Badge>
         </CardContent>
       </Card>
 
@@ -51,10 +45,6 @@ const ServiceDetails = () => {
           <p className="text-sm text-orange-700">
             Professional repair services to restore your fence before staining.
           </p>
-          <div className="space-y-1 mt-2">
-            <Badge variant="outline" className="text-xs">Minor: $250</Badge>
-            <Badge variant="outline" className="text-xs">Major: $750</Badge>
-          </div>
         </CardContent>
       </Card>
 
@@ -69,9 +59,6 @@ const ServiceDetails = () => {
           <p className="text-sm text-purple-700">
             Choose from transparent or solid color stains in your preferred color.
           </p>
-          <Badge variant="secondary" className="mt-2">
-            Waterproof
-          </Badge>
         </CardContent>
       </Card>
     </div>

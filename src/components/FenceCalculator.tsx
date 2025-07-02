@@ -177,10 +177,6 @@ const FenceCalculator = () => {
           
           {/* Budget section simplified */}
           <div className="w-full bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-300 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-amber-800 mb-4 flex items-center gap-2">
-              <DollarSign className="h-5 w-5" />
-              Your Budget
-            </h3>
             <div className="max-w-md">
               <Label htmlFor="budget" className="text-lg font-semibold text-amber-700">Budget ($)</Label>
               <Input
