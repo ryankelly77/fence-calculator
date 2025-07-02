@@ -121,7 +121,7 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
                 <CardContent>
                   <p className="text-sm text-gray-600 mb-4">Meet with our team to explore ways to reduce costs while maintaining quality.</p>
                   <Button className="bg-blue-600 hover:bg-blue-700 w-full" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://raptor-services.com/schedule-your-appointment/" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2 h-4 w-4" />
                       Schedule Appointment
                     </a>
@@ -167,7 +167,7 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
                   )}
                   {totalDiscount > 0 && (
                     <Button className="bg-green-600 hover:bg-green-700 w-full" asChild>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a href="https://raptor-services.com/schedule-your-appointment/" target="_blank" rel="noopener noreferrer">
                         <ShoppingCart className="mr-2 h-4 w-4" />
                         Book Now
                       </a>
@@ -202,7 +202,7 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
                       </div>
                     </div>
                     <Button 
-                      onClick={handleAcornFinancing}
+                      onClick={() => window.open('https://www.acornfinance.com/apply?d=AHLEJ', '_blank')}
                       className="bg-purple-600 hover:bg-purple-700 text-white w-full"
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
@@ -226,25 +226,25 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Site conditions:</strong> Rocky soil, slopes, or poor drainage may require additional preparation work
+                  <strong>Longer-Lasting Results:</strong> Investing in premium stain and professional application now means fewer maintenance costs later. Our high-quality stain resists UV damage, mildew, and weathering far better than lower-grade products.
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Material upgrades:</strong> Premium materials or custom designs will increase project costs
+                  <strong>Superior Protection:</strong> Texas weather is no joke. Our process deeply penetrates the wood and seals it against moisture, sun, and insects—prolonging the life of your fence by years.
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Permit requirements:</strong> Local building codes may require additional permits and inspections
+                  <strong>Professional Craftsmanship:</strong> Our team applies each coat with precision to ensure even coverage and lasting durability. Cutting corners here can lead to uneven staining, premature fading, and costly touch-ups.
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Access challenges:</strong> Limited equipment access may require manual labor, increasing costs
+                  <strong>Peace of Mind Included:</strong> Your project comes with a <strong>1-year transferable warranty</strong>, ensuring your fence stays beautiful—and covered. Most budget options don’t offer that kind of assurance.
                 </p>
               </div>
             </div>
