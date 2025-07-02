@@ -226,25 +226,49 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Longer-Lasting Results:</strong> Investing in premium stain and professional application now means fewer maintenance costs later. Our high-quality stain resists UV damage, mildew, and weathering far better than lower-grade products.
+                  <strong>Longer-Lasting Results:</strong> Investing in premium stain and professional application now means fewer maintenance costs later. Our high-quality stains are formulated to resist Texas heat, UV damage, mildew, and harsh weather far better than lower-grade products. This means your fence keeps its rich, vibrant appearance for years—without the need for frequent re-staining.
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Superior Protection:</strong> Texas weather is no joke. Our process deeply penetrates the wood and seals it against moisture, sun, and insects—prolonging the life of your fence by years.
+                  <strong>Superior Protection Against the Elements:</strong> Texas weather is no joke. Between intense sun, rain, and humidity, untreated or poorly stained wood deteriorates fast. Our process deeply penetrates the wood and seals it against moisture, UV rays, and insect damage. This added layer of protection extends the life of your fence by several years, preventing expensive repairs or early replacement.
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Professional Craftsmanship:</strong> Our team applies each coat with precision to ensure even coverage and lasting durability. Cutting corners here can lead to uneven staining, premature fading, and costly touch-ups.
+                  <strong>Professional Craftsmanship That Shows:</strong> Our experienced team doesn’t just "spray and go." We prep every surface thoroughly, apply stain with precision, and ensure even, consistent coverage. The result is a high-end finish that elevates your curb appeal. Cutting corners here often leads to streaks, patchy coverage, or stain that wears unevenly—and those results are far more costly to fix later.
                 </p>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm text-amber-800">
-                  <strong>Peace of Mind Included:</strong> Your project comes with a <strong>1-year transferable warranty</strong>, ensuring your fence stays beautiful—and covered. Most budget options don’t offer that kind of assurance.
+                  <strong>Peace of Mind Included:</strong> Your project is backed by a <strong>1-year transferable warranty</strong>, covering peeling, cracking, and other application issues. That’s real value—not something most budget services provide. If you sell your home, this warranty even adds value to the new buyer, showing care and quality investment in the property.
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>Real Cost Savings Over Time:</strong> While the initial quote may be a bit higher, our customers save significantly over time. Lower-cost staining options often require full re-dos in 1–2 years. Our stains typically last 3–5 years before needing a refresh, which means fewer interruptions, fewer bills, and better overall return on your investment.
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>Enhanced Appearance = Higher Property Value:</strong> A beautifully stained fence doesn’t just protect your property—it adds visual appeal that can improve perceived home value. Whether you're staying for the long haul or planning to sell, first impressions matter.
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>We Don’t Cut Corners—And Neither Should You:</strong> Budget jobs often skip important prep steps like proper power washing or sanding, which leads to adhesion failure. We take the time to do things right from the start, so you don’t end up paying more to fix it later.
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>Flexible Scheduling and Local, Trusted Support:</strong> We’re a local business that prides itself on personal service, fast turnaround times, and being there when you need us. You’re not dealing with a big-box crew—you’re getting neighborly care with professional results.
                 </p>
               </div>
             </div>
