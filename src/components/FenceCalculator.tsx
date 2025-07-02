@@ -73,7 +73,7 @@ const FenceCalculator = () => {
     <div className="max-w-6xl mx-auto p-6 space-y-6">
       <Card className="border-2 border-blue-200 shadow-xl">
         <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
-          <CardTitle className="flex items-center gap-2 text-2xl">
+          <CardTitle className="flex items-center gap-2 text-2xl text-white">
             <Calculator className="h-6 w-6" />
             Fence Staining Cost Calculator
           </CardTitle>

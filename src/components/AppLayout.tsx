@@ -26,7 +26,7 @@ const AppLayout: React.FC = () => {
         
         <div className="mt-12 text-center">
           <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Why Choose Our Service?</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Why Choose Our Services?</h3>
             <div className="grid md:grid-cols-2 gap-4 text-left">
               <div>
                 <h4 className="font-semibold text-blue-600 mb-2">Premium Materials</h4>
