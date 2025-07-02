@@ -56,10 +56,8 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
     window.open('https://www.acornfinance.com', '_blank', 'noopener,noreferrer');
   };
   
-  // Check if budget is above or below estimated price
   const budgetAbovePrice = budget >= originalPrice;
   
-  // If budget is above price, show book now button only
   if (budgetAbovePrice) {
     return (
       <div className="space-y-6">
@@ -67,7 +65,7 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
           <CardHeader>
             <CardTitle className="text-green-800 flex items-center gap-2">
               <ShoppingCart className="h-5 w-5" />
-              Great News! Your Budget Covers This Project
+              Your Project's Estimated Price
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-center">
@@ -87,7 +85,6 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
     );
   }
   
-  // If budget is below price, show options table
   const finalPrice = totalDiscount > 0 ? discountedPrice : originalPrice;
   const stillOverBudget = finalPrice > budget;
   
@@ -97,32 +94,42 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
         <CardHeader>
           <CardTitle className="text-red-800 flex items-center gap-2">
             <Calculator className="h-5 w-5" />
-            Price Above Budget - We Have Options!
+            Your Project's Estimated Price
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="flex flex-col">
-              <Card className="border-blue-200 flex-1">
+        <CardContent className="space-y-4">
+          <p className="text-lg text-red-700 mb-4">
+            Project Cost: {formatPrice(originalPrice)} | Your Budget: {formatPrice(budget)}
+          </p>
+        </CardContent>
+      </Card>
+      
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card className="border-blue-200 bg-blue-50/30">
+          <CardHeader>
+            <CardTitle className="text-blue-800 flex items-center gap-2">
+              <Calculator className="h-5 w-5" />
+              Price Above Budget - We Have Options!
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="grid gap-4">
+              <Card className="border-blue-200">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg text-blue-800">Option 1: Schedule Consultation</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-600 mb-4">Meet with our team to explore ways to reduce costs while maintaining quality.</p>
+                  <Button className="bg-blue-600 hover:bg-blue-700 w-full" asChild>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Appointment
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
-              <div className="mt-4 flex justify-center">
-                <Button className="bg-blue-600 hover:bg-blue-700 w-full" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule Appointment
-                  </a>
-                </Button>
-              </div>
-            </div>
-            
-            <div className="flex flex-col">
-              <Card className="border-green-200 flex-1">
+              
+              <Card className="border-green-200">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg text-green-800">Option 2: Apply Discounts</CardTitle>
                 </CardHeader>
@@ -158,22 +165,18 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
                       </p>
                     </div>
                   )}
+                  {totalDiscount > 0 && (
+                    <Button className="bg-green-600 hover:bg-green-700 w-full" asChild>
+                      <a href="#" target="_blank" rel="noopener noreferrer">
+                        <ShoppingCart className="mr-2 h-4 w-4" />
+                        Book Now
+                      </a>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
-              {totalDiscount > 0 && (
-                <div className="mt-4 flex justify-center">
-                  <Button className="bg-green-600 hover:bg-green-700 w-full" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      <ShoppingCart className="mr-2 h-4 w-4" />
-                      Book Now
-                    </a>
-                  </Button>
-                </div>
-              )}
-            </div>
-            
-            <div className="flex flex-col">
-              <Card className="border-purple-200 flex-1">
+              
+              <Card className="border-purple-200">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg text-purple-800 flex items-center gap-2">
                     <CreditCard className="h-5 w-5" />
@@ -190,7 +193,7 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
                       <p className="text-xs text-purple-600">36 months @ 18% APR</p>
                     </div>
                     <div className="text-sm text-gray-600">
-                      <p className="font-medium mb-2">We Accept:</p>
+                      <p className="font-medium mb-2">Or, We Also Accept These Cards:</p>
                       <div className="flex flex-wrap gap-2">
                         <Badge variant="outline">Visa</Badge>
                         <Badge variant="outline">Mastercard</Badge>
@@ -198,72 +201,56 @@ const BudgetOptions: React.FC<BudgetOptionsProps> = ({ originalPrice, budget }) 
                         <Badge variant="outline">American Express</Badge>
                       </div>
                     </div>
+                    <Button 
+                      onClick={handleAcornFinancing}
+                      className="bg-purple-600 hover:bg-purple-700 text-white w-full"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Apply with Acorn Financing
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
-              <div className="mt-4 flex justify-center">
-                <Button 
-                  onClick={handleAcornFinancing}
-                  className="bg-purple-600 hover:bg-purple-700 text-white w-full"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Apply with Acorn Financing
-                </Button>
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card className="border-amber-200 bg-amber-50/30">
+          <CardHeader>
+            <CardTitle className="text-amber-800 text-lg">
+              Important Cost Considerations
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>Site conditions:</strong> Rocky soil, slopes, or poor drainage may require additional preparation work
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>Material upgrades:</strong> Premium materials or custom designs will increase project costs
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>Permit requirements:</strong> Local building codes may require additional permits and inspections
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-sm text-amber-800">
+                  <strong>Access challenges:</strong> Limited equipment access may require manual labor, increasing costs
+                </p>
               </div>
             </div>
-          </div>
-          
-          {/* Competing Quote Section - Only show if still over budget after discounts */}
-          {stillOverBudget && (
-            <Card className="border-orange-200 bg-orange-50/50 mt-6">
-              <CardContent className="pt-6">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <MessageCircle className="h-6 w-6 text-orange-600 flex-shrink-0" />
-                    <p className="text-lg font-semibold text-orange-800">
-                      Do you have a competing quote? We may be able to match or beat their price.
-                    </p>
-                  </div>
-                  
-                  <RadioGroup value={hasCompetingQuote} onValueChange={setHasCompetingQuote}>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="yes" id="quote-yes" />
-                      <Label htmlFor="quote-yes">Yes, I have a competing quote</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="no" id="quote-no" />
-                      <Label htmlFor="quote-no">No, I don't have a competing quote</Label>
-                    </div>
-                  </RadioGroup>
-                  
-                  {hasCompetingQuote === 'yes' && (
-                    <div className="mt-4 p-4 border-2 border-dashed border-orange-300 rounded-lg">
-                      <Label htmlFor="quote-upload" className="block text-sm font-medium text-orange-800 mb-2">
-                        Upload your competing quote (PDF, JPG, PNG)
-                      </Label>
-                      <div className="flex items-center gap-3">
-                        <Input
-                          id="quote-upload"
-                          type="file"
-                          accept=".pdf,.jpg,.jpeg,.png"
-                          onChange={handleFileUpload}
-                          className="flex-1"
-                        />
-                        <Upload className="h-5 w-5 text-orange-600" />
-                      </div>
-                      {uploadedFile && (
-                        <p className="text-sm text-green-600 mt-2">
-                          ✓ File uploaded: {uploadedFile.name}
-                        </p>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          )}
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };
